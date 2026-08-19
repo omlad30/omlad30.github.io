@@ -535,8 +535,8 @@
             My Certificates</h3>
           <div class="cert-list" id="certGrid" style="max-width: 100%;">
 
-            <div class="cert-card glass-card reveal d1" data-title="Deloitte Data Analysis"
-              data-src="images/Deloitte.png">
+            <div class="cert-card glass-card reveal d1" data-title="Deloitte Certifications"
+              data-src="images/Deloitte.png,images/Deloitte-Cyber.png">
               <div class="cert-icon-wrap" style="--icon-bg: rgba(34, 211, 238, 0.15); --icon-color: #22d3ee;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round">
@@ -546,9 +546,9 @@
                 </svg>
               </div>
               <div class="cert-info">
-                <h3 class="cert-name">Deloitte Data Analysis</h3>
+                <h3 class="cert-name">Deloitte Certifications</h3>
                 <div class="cert-issuer">Deloitte</div>
-                <p class="cert-description">Data analysis and problem-solving certification provided by Deloitte.</p>
+                <p class="cert-description">Data analysis and cybersecurity certifications provided by Deloitte.</p>
               </div>
               <div class="cert-action">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -725,8 +725,8 @@
               <div class="cert-info">
                 <h3 class="cert-name">Hackathons Certification</h3>
                 <div class="cert-issuer">Achievement</div>
-                <p class="cert-description">Professional certification recognizing technical skills and achievements in
-                  hackathons.</p>
+                <p class="cert-description">Participated in 40 hours National level hackathon held at Sanjay Ghodawat
+                  University, Kolhapur in 2024 .</p>
               </div>
               <div class="cert-action">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -869,7 +869,8 @@
       certModalTitle.textContent = title;
       certModalBody.innerHTML = '';
 
-      const isPDF = src.toLowerCase().endsWith('.pdf');
+      const sources = src.split(',');
+      const isPDF = sources[0].trim().toLowerCase().endsWith('.pdf');
 
       if (isPDF) {
         const wrapper = document.createElement('div');
@@ -880,7 +881,7 @@
         wrapper.style.alignItems = 'center';
 
         const iframe = document.createElement('iframe');
-        iframe.src = src;
+        iframe.src = sources[0].trim();
         iframe.title = title;
         iframe.style.flex = '1';
         iframe.style.width = '100%';
@@ -893,7 +894,7 @@
           <p style="color: var(--text-dim); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
             If the PDF doesn't display automatically on your device:
           </p>
-          <a href="${src}" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <a href="${sources[0].trim()}" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 0.5rem;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px;">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
               <polyline points="15 3 21 3 21 9"></polyline>
@@ -907,10 +908,94 @@
         wrapper.appendChild(fallbackContainer);
         certModalBody.appendChild(wrapper);
       } else {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = title;
-        certModalBody.appendChild(img);
+        if (sources.length === 1) {
+          const img = document.createElement('img');
+          img.src = sources[0].trim();
+          img.alt = title;
+          img.style.maxWidth = '100%';
+          img.style.maxHeight = '100%';
+          img.style.objectFit = 'contain';
+          certModalBody.appendChild(img);
+        } else {
+          const sliderWrap = document.createElement('div');
+          sliderWrap.style.position = 'relative';
+          sliderWrap.style.width = '100%';
+          sliderWrap.style.height = '100%';
+          sliderWrap.style.display = 'flex';
+          sliderWrap.style.alignItems = 'center';
+          sliderWrap.style.justifyContent = 'center';
+
+          let currentIndex = 0;
+          const img = document.createElement('img');
+          img.src = sources[currentIndex].trim();
+          img.alt = title;
+          img.style.maxWidth = '100%';
+          img.style.maxHeight = '100%';
+          img.style.objectFit = 'contain';
+          img.style.borderRadius = '8px';
+          sliderWrap.appendChild(img);
+
+          const createBtn = (html, left, right) => {
+            const btn = document.createElement('button');
+            btn.innerHTML = html;
+            btn.style.position = 'absolute';
+            if (left) btn.style.left = left;
+            if (right) btn.style.right = right;
+            btn.style.top = '50%';
+            btn.style.transform = 'translateY(-50%)';
+            btn.style.background = 'rgba(255, 255, 255, 0.1)';
+            btn.style.color = '#fff';
+            btn.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+            btn.style.borderRadius = '50%';
+            btn.style.width = '44px';
+            btn.style.height = '44px';
+            btn.style.cursor = 'pointer';
+            btn.style.display = 'flex';
+            btn.style.alignItems = 'center';
+            btn.style.justifyContent = 'center';
+            btn.style.fontSize = '1.4rem';
+            btn.style.backdropFilter = 'blur(4px)';
+            btn.style.transition = 'all 0.2s';
+            btn.onmouseover = () => { btn.style.background = 'rgba(255, 255, 255, 0.2)'; btn.style.transform = 'translateY(-50%) scale(1.1)'; };
+            btn.onmouseout = () => { btn.style.background = 'rgba(255, 255, 255, 0.1)'; btn.style.transform = 'translateY(-50%) scale(1)'; };
+            return btn;
+          };
+
+          const prevBtn = createBtn('&#10094;', '10px', null);
+          const nextBtn = createBtn('&#10095;', null, '10px');
+
+          const indicator = document.createElement('div');
+          indicator.style.position = 'absolute';
+          indicator.style.bottom = '10px';
+          indicator.style.left = '50%';
+          indicator.style.transform = 'translateX(-50%)';
+          indicator.style.background = 'rgba(0, 0, 0, 0.6)';
+          indicator.style.padding = '4px 12px';
+          indicator.style.borderRadius = '999px';
+          indicator.style.color = '#fff';
+          indicator.style.fontSize = '0.9rem';
+          indicator.textContent = `1 / ${sources.length}`;
+
+          const updateSlider = () => {
+            img.src = sources[currentIndex].trim();
+            indicator.textContent = `${currentIndex + 1} / ${sources.length}`;
+          };
+
+          prevBtn.onclick = () => {
+            currentIndex = (currentIndex === 0) ? sources.length - 1 : currentIndex - 1;
+            updateSlider();
+          };
+
+          nextBtn.onclick = () => {
+            currentIndex = (currentIndex === sources.length - 1) ? 0 : currentIndex + 1;
+            updateSlider();
+          };
+
+          sliderWrap.appendChild(prevBtn);
+          sliderWrap.appendChild(nextBtn);
+          sliderWrap.appendChild(indicator);
+          certModalBody.appendChild(sliderWrap);
+        }
       }
 
       certModal.classList.add('active');
