@@ -62,15 +62,14 @@
           writing clean, efficient, maintainable code and building end-to-end software solutions — looking to grow as a
           developer while contributing to impactful projects in a collaborative team.</p>
         <div class="cta-row">
-          <!-- Download Resume Button -->
-          <a href="./images/OM_LAD_Resume.pdf" download="Om_Lad_Resume.pdf" class="btn btn-primary">
+          <!-- View Resume Button -->
+          <a href="./images/OM_LAD_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
-            Download Resume
+            View Resume
           </a>
           <a href="#projects" class="btn btn-ghost">
             View Projects
@@ -377,14 +376,94 @@
         <p class="sec-sub">A showcase of my continuous learning and competitive programming journey.</p>
       </div>
 
-      <div class="edu-grid">
+      <div style="display: flex; flex-direction: column; gap: 4rem;">
 
-        <!-- Certificates Column -->
+        <!-- Hackathons Section -->
+        <div id="hackathons">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text); text-align: center;">My Hackathons</h3>
+          <div class="cert-list" id="hackathonGrid">
+            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
+              data-src="images/prabal.pdf">
+              <div class="cert-icon-wrap" style="--icon-bg: rgba(52, 211, 153, 0.15); --icon-color: #34d399;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="cert-info">
+                <h3 class="cert-name">Hackathons Certification</h3>
+                <div class="cert-issuer">Achievement</div>
+                <p class="cert-description">Participated in 24 hours National level hackathon held at Dr .D.Y.Patil
+                  School of Engineering and Management
+                  (Deemed to be University), Kolhapur in 2024 .</p>
+                <p>Finished in last 10 teams among 120+ teams .</p>
+              </div>
+              <div class="cert-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+
+            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
+              data-src="images/prabal.pdf">
+              <div class="cert-icon-wrap" style="--icon-bg: rgba(249, 115, 22, 0.15); --icon-color: #f97316;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="cert-info">
+                <h3 class="cert-name">Hackathons Certification</h3>
+                <div class="cert-issuer">Achievement</div>
+                <p class="cert-description">Participated in 40 hours National level hackathon held at Sanjay Ghodawat
+                  University, Kolhapur in 2024 .</p>
+              </div>
+              <div class="cert-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
+              data-src="images/prabal.pdf">
+              <div class="cert-icon-wrap" style="--icon-bg: rgba(99, 102, 241, 0.15); --icon-color: #6366f1;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="cert-info">
+                <h3 class="cert-name">Hackathons Certification</h3>
+                <div class="cert-issuer">Achievement</div>
+                <p class="cert-description">Participated in 8 hours SIH Inter College level hackathon held at
+                  Dr.D.Y.Patil
+                  School of Engineering and Management (DYPSEM).</p>
+                <p>Finished 5th among 40 teams .</p>
+              </div>
+              <div class="cert-action">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Certificates Section -->
         <div id="certificates">
-          <h3
-            style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text); text-align: center;">
-            My Certificates</h3>
-          <div class="cert-list" id="certGrid" style="max-width: 100%;">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text); text-align: center;">My Certificates</h3>
+          <div class="cert-list" id="certGrid">
 
             <div class="cert-card glass-card reveal d1" data-title="Deloitte Certifications"
               data-src="images/Deloitte.png,images/Deloitte-Cyber.png">
@@ -545,90 +624,6 @@
                 <h3 class="cert-name">HCL GUVI Certification</h3>
                 <div class="cert-issuer">HCL & GUVI</div>
                 <p class="cert-description">Certification obtained through GUVI in partnership with HCL.</p>
-              </div>
-              <div class="cert-action">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Hackathons Column -->
-        <div id="hackathons">
-          <h3
-            style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text); text-align: center;">
-            My Hackathons</h3>
-          <div class="cert-list" id="hackathonGrid" style="max-width: 100%;">
-            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
-              data-src="images/prabal.pdf">
-              <div class="cert-icon-wrap" style="--icon-bg: rgba(52, 211, 153, 0.15); --icon-color: #34d399;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  <path d="m9 12 2 2 4-4"></path>
-                </svg>
-              </div>
-              <div class="cert-info">
-                <h3 class="cert-name">Hackathons Certification</h3>
-                <div class="cert-issuer">Achievement</div>
-                <p class="cert-description">Participated in 24 hours National level hackathon held at Dr .D.Y.Patil
-                  School of Engineering and Management
-                  (Deemed to be University), Kolhapur in 2024 .</p>
-                <p>Finished in last 10 teams among 120+ teams .</p>
-              </div>
-              <div class="cert-action">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </div>
-            </div>
-
-
-            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
-              data-src="images/prabal.pdf">
-              <div class="cert-icon-wrap" style="--icon-bg: rgba(249, 115, 22, 0.15); --icon-color: #f97316;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-              <div class="cert-info">
-                <h3 class="cert-name">Hackathons Certification</h3>
-                <div class="cert-issuer">Achievement</div>
-                <p class="cert-description">Participated in 40 hours National level hackathon held at Sanjay Ghodawat
-                  University, Kolhapur in 2024 .</p>
-              </div>
-              <div class="cert-action">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </div>
-            </div>
-
-            <div class="cert-card glass-card reveal d1" data-title="Hackathons Certification"
-              data-src="images/prabal.pdf">
-              <div class="cert-icon-wrap" style="--icon-bg: rgba(99, 102, 241, 0.15); --icon-color: #6366f1;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <div class="cert-info">
-                <h3 class="cert-name">Hackathons Certification</h3>
-                <div class="cert-issuer">Achievement</div>
-                <p class="cert-description">Participated in 8 hours SIH Inter College level hackathon held at
-                  Dr.D.Y.Patil
-                  School of Engineering and Management (DYPSEM).</p>
-                <p>Finished 5th among 40 teams .</p>
               </div>
               <div class="cert-action">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
